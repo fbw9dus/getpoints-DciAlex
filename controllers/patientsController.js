@@ -8,30 +8,9 @@ exports.getPatients =  (req, res, next) => {
 };
 
 exports.getPatient =  (req, res, next) => {
-  const { id } = req.params -1;
+  const  id  = req.params.id -1 ;
   var patients = Patients
-  const patient = patients(id)
-//   console.log(id)
-//   var patient =  Patients.findById(id)
+  const patient = patients[id]
+    
   res.status(200).json(patient)
 };
-
-// exports.deletePatient = async (req, res, next) => {
-//   const { id } = req.params;
-//   var patient = await Records.findByIdAndDelete(id)
-//   res.status(200).send(patient);
-// };
-
-// exports.updatePatient = async (req, res, next) => {
-//   const { id } = req.params;
-//   const dt = req.body;
-//   var patient = await Patients.findByIdAndUpdate(id, dt, {new: true})
-//   res.status(200).send(patient);
-// };
-
-// exports.addPatient =async (req, res, next) => {
-//   const data = req.body;
-//   var patient = new Patients(data)
-//   await patient.save()
-//   res.status(200).send(record);
-// };
