@@ -3,15 +3,16 @@ var Patients = require('../data/patients');
 
 exports.getPatients =  (req, res, next) => {
   var patients =  Patients.find()
-  res.status(200).send(patients);
-  console.log(Patients)
+  res.status(200).json(patients)
+  
 };
 
 exports.getPatient =  (req, res, next) => {
   const { id } = req.params;
+  const patient = patients(id)
 //   console.log(id)
-  var patient =  Patients.findById(id)
-  res.status(200).send(patient);
+//   var patient =  Patients.findById(id)
+  res.status(200).json(patient)
 };
 
 // exports.deletePatient = async (req, res, next) => {
