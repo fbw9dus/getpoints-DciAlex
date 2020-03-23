@@ -2,13 +2,14 @@
 var Patients = require('../data/patients');
 
 exports.getPatients =  (req, res, next) => {
-  var patients =  Patients.find()
+  var patients =  Patients
   res.status(200).json(patients)
   
 };
 
 exports.getPatient =  (req, res, next) => {
-  const { id } = req.params;
+  const { id } = req.params -1;
+  var patients = Patients
   const patient = patients(id)
 //   console.log(id)
 //   var patient =  Patients.findById(id)
